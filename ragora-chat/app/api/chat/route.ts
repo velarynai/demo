@@ -61,6 +61,7 @@ export async function POST(request: Request) {
         const chunks = client.chatStream({
           messages: [{ role: 'user', content: message.trim() }],
           retrieval: { collectionId: collectionId.trim() },
+          generation: { temperature: 0 },
           agentic: {
             mode: 'agentic',
             session: true,
